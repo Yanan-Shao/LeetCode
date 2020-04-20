@@ -1,0 +1,34 @@
+A 2d grid map of m rows and n columns is initially filled with water. We may perform an  addLand  operation which turns the water at position (row, col) into a land. Given a list of positions to operate, count the number of islands after each  addLand  operation. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+class Solution {
+public:
+    vector<int> numIslands2(int m, int n, vector<vector<int>>& positions) {
+        vector<int> res;
+        int cnt = 0;
+        vector<int> roots(m * n, -1);
+        vector<vector<int>> dirs{{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
+        for (auto &pos : positions) {
+            int id = n * pos[0] + pos[1];
+            if (roots[id] != -1) {
+                res.push_back(cnt);
+                continue;
+            }
+            roots[id] = id;
+            ++cnt;
+            for (auto dir : dirs) {
+                int x = pos[0] + dir[0], y = pos[1] + dir[1], cur_id = n * x + y;
+                if (x < 0 || x >= m || y < 0 || y >= n || roots[cur_id] == -1) continue;
+                int p = findRoot(roots, cur_id), q = findRoot(roots, id);
+                if (p != q) {
+                    roots[p] = q;
+                    --cnt;
+                }
+            }
+            res.push_back(cnt);
+        }
+        return res;
+    }
+    int findRoot(vector<int>& roots, int id) {
+        return (id == roots[id]) ? id : findRoot(roots, roots[id]);
+    }
+};
