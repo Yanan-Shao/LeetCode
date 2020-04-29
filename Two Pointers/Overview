@@ -24,7 +24,6 @@ Sort with Specification
   922. Sort Array By Parity II
   
 Move & Remove
-  19. Remove Nth Node from End of List
   26. Remove Duplicates from Sorted Array
   283. Move Zeroes
   328. Odd Even Linked List
@@ -42,6 +41,11 @@ Pattern (Palindrome, Parenthese, etc)
   125. Valid Palindrome
   246. Strobogrammatic Number
   921. Minimum Add to Make Parenthese Valid
+  
+
+Fast + Slow Pointers
+  19. Remove Nth Node from End of List
+  
   
 TO DO
   56. Merge Intervals
