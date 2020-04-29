@@ -1,16 +1,25 @@
 Search & Find
+  33. Search in Rotated Sorted Array
   35. Search Insert Position
   69. Sqrt(x)
   74. Search a 2D Matrix
+  81. Search in Rotated Sorted Array II 
+  153. Find Minimum in Rotated Sorted Array
+  154. Find Minimum in Rotated Sorted Array II
   162. Find Peak Element
   167. Two Sum II - Input array is sorted
   268. Missing Number
+  275. H-Index II
+  278. First Bad Version
   287. Find the Duplicate Number
   374. Guess Number Higher or Lower
+  658. Find K Closest Elements
+  702. Search in a Sorted Array of Unknown Size
   704. Binary Search
   
   
 Math Problems
+  354. Russian Doll Envelopes
   367. Valid Perfect Square
   441. Arranging Coins
   483. Smallest Good Base
