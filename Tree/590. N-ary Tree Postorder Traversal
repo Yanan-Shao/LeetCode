@@ -1,0 +1,48 @@
+Given an n-ary tree, return the  postorder  traversal of its nodes' values.
+For example, given a 3-ary tree:
+ 
+
+ 
+Return its postorder traversal as: [5,6,3,2,4,1].
+ 
+Note:
+Recursive solution is trivial, could you do it iteratively?
+
+
+// Sol 1 Recursion
+class Solution {
+public:
+    vector<int> postorder(Node* root) {
+        vector<int> res;
+        helper(root, res);
+        return res;
+    }
+    void helper(Node* node, vector<int>& res) {
+        if (!node) return;
+        for (Node* child : node->children) {
+            helper(child, res);
+        }
+        res.push_back(node->val);
+    }
+};
+
+
+
+
+// Sol 2 Iteration + Stack
+class Solution {
+public:
+    vector<int> postorder(Node* root) {
+        if (!root) return {};
+        vector<int> res;
+        stack<Node*> st{{root}};
+        while (!st.empty()) {
+            Node *t = st.top(); st.pop();
+            res.insert(res.begin(), t->val);
+            for (Node* child : t->children) {
+                if (child) st.push(child);
+            }
+        }
+        return res;
+    }
+};
