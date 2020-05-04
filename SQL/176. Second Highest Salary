@@ -1,0 +1,38 @@
+Write a SQL query to get the second highest salary from the Employee table.
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+For example, given the above Employee table, the second highest salary is 200. If there is no second highest salary, then the query should return null.
+
+
+
+// Sol 1
+SELECT Salary FROM Employee GROUP BY Salary
+UNION ALL (SELECT NULL AS Salary)
+ORDER BY Salary DESC LIMIT 1 OFFSET 1;
+ 
+
+
+// Sol 2
+SELECT MAX(Salary) FROM Employee 
+WHERE Salary NOT IN
+(SELECT MAX(Salary) FROM Employee);
+ 
+
+
+// Sol 3
+SELECT MAX(Salary) FROM Employee
+Where Salary <
+(SELECT MAX(Salary) FROM Employee);
+ 
+
+
+// Sol 4
+SELECT MAX(Salary) FROM Employee E1
+WHERE 1 =
+(SELECT COUNT(DISTINCT(E2.Salary)) FROM Employee E2
+WHERE E2.Salary > E1.Salary);
