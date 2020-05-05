@@ -30,7 +30,7 @@ public:
 
 
 
-// brute force
+// Moore Voting
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
