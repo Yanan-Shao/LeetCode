@@ -5,6 +5,9 @@ Occurrence
   260. Single Number III
   268. Missing Number
   287. Find the Duplicate Number
+  696. Count Binary Substrings
+  868. Binary Gap
+
 
 
 
@@ -27,13 +30,21 @@ Bits
   338. Counting Bits
   
   
-+-*/
++-*/ Conversion Bitwise operation
   29. Divide Two Integers
-  371. Sum of Two Integers
   76. Number Complement 
-  
-  
+  201. Bitwise AND of Numbers Range
+  371. Sum of Two Integers
+  389. Find the Difference
+  405. Convert a Number to Hexadecimal
+  421. Maximum XOR of Two Numbers in an Array 
+  810. Chalkboard XOR Game
+  898. Bitwise ORs of Subarrays
   
   
 Pattern
   89. Gray Code 
+  187. Repeated DNA Sequences
+  393. UTF-8 Validation
+  401. Binary Watch
+  693. Binary Number with Alternating Bits
